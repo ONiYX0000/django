@@ -1,0 +1,95 @@
+footer {
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid var(--roxo-principal);
+    padding: 40px 20px 20px;
+    color: var(--branco-texto);
+    font-size: 0.95rem;
+    margin-top: 40px;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.footer-section {
+    flex: 1 1 280px;
+    min-width: 280px;
+    color: #ccc;
+}
+
+.footer-section h3 {
+    color: var(--roxo-principal);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-section p,
+.footer-section ul li {
+    line-height: 1.7;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--roxo-secundario);
+}
+
+.footer-section p i {
+    margin-right: 8px;
+    color: var(--roxo-principal);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--roxo-principal);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+    color: var(--roxo-secundario);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+}

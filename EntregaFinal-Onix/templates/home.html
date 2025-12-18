@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+{% include "top.html" %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description }}">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/top_style.css' %}">
+</head>
+<body>
+
+<main>
+<section>
+    <div class="section-header">
+        <img src="/static/IMAGE/BANNER BOAS VINDAS.png" 
+             alt="Banner de Boas-Vindas" 
+             class="section-banner">
+
+        <h2>Bem-vindo à ONYX - Seu Portal de Jogos e Gift Cards!</h2>
+
+        <p>
+            Descubra os melhores códigos de jogos e gift cards para todas as suas plataformas favoritas.
+            Preços incríveis e entrega instantânea!
+        </p>
+    </div>
+
+    <h3><i class="fas fa-fire"></i> Destaques da Semana:</h3>
+
+    <div class="actions-grid">
+        <a href="{% url 'jogos' %}" class="action-card">
+            <i class="fas fa-gamepad"></i>
+            <span>Códigos de Jogos</span>
+        </a>
+
+        <a href="{% url 'giftcards' %}" class="action-card">
+            <i class="fas fa-gift"></i>
+            <span>Gift Cards</span>
+        </a>
+
+        <a href="#" class="action-card">
+            <i class="fas fa-tags"></i>
+            <span>Promoções</span>
+        </a>
+
+        <a href="/accounts/login/" class="action-card">
+            <i class="fas fa-sign-in-alt"></i>
+            <span>Minha Conta</span>
+        </a>
+    </div>
+
+    <hr>
+
+    <h3><i class="fas fa-info-circle"></i> Por que escolher a ONYX?</h3>
+
+    <ul class="styled-list">
+        <li><i class="fas fa-check-circle"></i> Entrega Instantânea</li>
+        <li><i class="fas fa-check-circle"></i> Preços Competitivos</li>
+        <li><i class="fas fa-check-circle"></i> Segurança</li>
+        <li><i class="fas fa-check-circle"></i> Variedade</li>
+        <li><i class="fas fa-check-circle"></i> Suporte Dedicado</li>
+    </ul>
+</section>
+</main>
+{% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Promoções{% endblock %}
+
+{% block content %}
+<section>
+
+    <div class="section-header">
+        <img src="{% static 'images/promocao.png' %}" alt="Banner de Promoções" class="section-banner">
+        <h2>Promoções Atuais da ONYX!</h2>
+        <p>
+            Não perca as ofertas imperdíveis da ONYX!
+            Códigos de jogos e gift cards com descontos especiais
+            por tempo limitado.
+        </p>
+    </div>
+
+    <h3><i class="fas fa-gamepad"></i> Jogos em Destaque na Promoção</h3>
+
+    <ul class="styled-list offer-list">
+        <li>
+            <h4>The Witcher 3: Wild Hunt - Edição Completa</h4>
+            <p>
+                50% OFF
+                <span class="original-price">R$ 199,99</span>
+                <span class="discount-price">R$ 99,99</span>
+            </p>
+            <button class="btn-secondary btn-small">Ver Oferta</button>
+        </li>
+
+        <li>
+            <h4>Grand Theft Auto V</h4>
+            <p>
+                30% OFF
+                <span class="original-price">R$ 149,99</span>
+                <span class="discount-price">R$ 104,99</span>
+            </p>
+            <button class="btn-secondary btn-small">Ver Oferta</button>
+        </li>
+
+        <li>
+            <h4>Cyberpunk 2077</h4>
+            <p>
+                40% OFF
+                <span class="original-price">R$ 199,99</span>
+                <span class="discount-price">R$ 119,99</span>
+            </p>
+            <button class="btn-secondary btn-small">Ver Oferta</button>
+        </li>
+    </ul>
+
+    <h3><i class="fas fa-gift"></i> Gift Cards com Desconto</h3>
+
+    <ol class="styled-list offer-list">
+        <li>
+            <h4>Gift Card Steam R$ 200</h4>
+            <p>
+                10% de desconto
+                <span class="original-price">R$ 200,00</span>
+                <span class="discount-price">R$ 180,00</span>
+            </p>
+            <button class="btn-secondary btn-small">Ver Oferta</button>
+        </li>
+
+        <li>
+            <h4>Gift Card Xbox R$ 150</h4>
+            <p>
+                8% de desconto
+                <span class="original-price">R$ 150,00</span>
+                <span class="discount-price">R$ 138,00</span>
+            </p>
+            <button class="btn-secondary btn-small">Ver Oferta</button>
+        </li>
+    </ol>
+
+    <hr>
+
+    <h3><i class="fas fa-bolt"></i> Ofertas Relâmpago</h3>
+
+    <p>
+        Nossas ofertas relâmpago duram pouco!
+        Siga-nos nas redes sociais para ser o primeiro
+        a saber e não perder nenhuma oportunidade.
+    </p>
+
+    <a href="#" class="btn-primary">
+        <i class="fas fa-bell"></i> Ativar Notificações de Ofertas
+    </a>
+
+</section>
+{% endblock %}

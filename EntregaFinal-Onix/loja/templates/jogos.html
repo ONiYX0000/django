@@ -1,0 +1,96 @@
+    {% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+{% include "top.html" %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <meta charset="UTF-8">
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description }}">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<main>
+<section>
+    <div class="section-header">
+        <img src="/static/IMAGE/Códigos de Jogos.png"
+             alt="Banner de Códigos de Jogos"
+             class="section-banner">
+
+        <h2>Códigos de Jogos - Ativação Imediata!</h2>
+        <p>
+            Navegue por nossa vasta biblioteca de códigos de jogos para PC, Xbox,
+            PlayStation e Nintendo. Encontre o seu próximo game agora!
+        </p>
+    </div>
+
+    <h3><i class="fas fa-filter"></i> Gêneros Populares:</h3>
+    <ul class="styled-list">
+        <li><i class="fas fa-crosshairs"></i> Ação e Aventura</li>
+        <li><i class="fas fa-hat-wizard"></i> RPG</li>
+        <li><i class="fas fa-chess-board"></i> Estratégia e Simulação</li>
+        <li><i class="fas fa-futbol"></i> Esportes e Corrida</li>
+        <li><i class="fas fa-paint-brush"></i> Indie e Plataforma</li>
+    </ul>
+
+    <h3><i class="fas fa-fire"></i> Jogos em Oferta:</h3>
+
+    <ol class="offer-list">
+        {% for jogo in jogos %}
+        <li>
+            <div class="offer-item">
+                <img src="/static/IMAGE/game-default.png"
+                     alt="{{ jogo.nome }}"
+                     class="offer-image">
+
+                <div class="offer-info">
+                    <h4>{{ jogo.nome }}</h4>
+
+                    <ul class="game-details">
+                        <li>
+                            <i class="fas fa-dollar-sign"></i>
+                            Preço:
+                            <span class="price-highlight">
+                                R$ {{ jogo.preco }}
+                            </span>
+                        </li>
+                        <li>
+                            <button class="btn-secondary btn-small">
+                                Comprar
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        {% empty %}
+        <p>Nenhum jogo disponível no momento.</p>
+        {% endfor %}
+    </ol>
+
+    <hr>
+
+    <h3><i class="fas fa-info-circle"></i> Como Funciona a Ativação:</h3>
+    <dl class="activation-guide">
+        <dt>1. Escolha seu jogo:</dt>
+        <dd>Navegue por nossas categorias e selecione o título desejado.</dd>
+
+        <dt>2. Realize a compra:</dt>
+        <dd>Adicione ao carrinho e finalize a compra de forma segura.</dd>
+
+        <dt>3. Receba o código:</dt>
+        <dd>O código de ativação será enviado para seu e-mail instantaneamente.</dd>
+
+        <dt>4. Ative na plataforma:</dt>
+        <dd>Siga as instruções para ativar o código na plataforma do jogo.</dd>
+    </dl>
+</section>
+</main>
+{% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% include "top.html" %}
+{% block title %}Meus Pedidos{% endblock %}
+
+{% block content %}
+<section>
+    <div class="orders-content">
+
+        <div class="orders-filters">
+            <div class="filter-group">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Pendentes</button>
+                <button class="filter-btn">Concluídos</button>
+                <button class="filter-btn">Cancelados</button>
+            </div>
+
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar pedido...">
+            </div>
+        </div>
+
+        <div class="orders-list">
+            {% if pedidos %}
+                {% for pedido in pedidos %}
+                    <div class="order-card">
+                        <h3>Pedido #{{ pedido.id }}</h3>
+                        <p>Status: {{ pedido.status }}</p>
+                        <p>Total: R$ {{ pedido.total }}</p>
+                        <p>Data: {{ pedido.data_pedido|date:"d/m/Y H:i" }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="empty-state">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Nenhum pedido encontrado</h3>
+                    <p>Você ainda não realizou nenhum pedido em nossa loja.</p>
+                    <a href="{% url 'jogos' %}" class="cta-button">
+                        <i class="fas fa-gamepad"></i> Ver Jogos
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+{% include "footer.html" %}

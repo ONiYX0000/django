@@ -1,0 +1,72 @@
+.account-summary .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.account-summary .summary-item {
+    background-color: var(--roxo-escuro);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.account-summary .summary-item:hover {
+    transform: translateY(-5px);
+}
+
+.account-summary .summary-item i {
+    font-size: 2.5rem;
+    color: var(--roxo-claro);
+    margin-bottom: 10px;
+}
+
+.account-summary .summary-item p {
+    font-size: 0.9rem;
+    color: var(--branco-texto);
+    margin-bottom: 5px;
+}
+
+.account-summary .summary-item span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--roxo-claro-hover);
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-card {
+    background-color: var(--roxo-claro);
+    color: var(--roxo-escuro);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 6px var(--roxo-escuro);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-card i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--roxo-escuro);
+}
+
+.action-card:hover {
+    background-color: var(--roxo-claro-hover);
+    color: var(--branco-texto);
+    transform: translateY(-5px);
+}
+
+.action-card:hover i {
+    color: var(--branco-texto);
+}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contato{% endblock %}
+
+{% block content %}
+<section>
+
+    <div class="section-header">
+        <img src="{% static 'images/contato.png' %}" alt="Banner de Contato" class="section-banner">
+        <h2>Fale Conosco - ONYX</h2>
+        <p>
+            Tem alguma dúvida, sugestão ou precisa de suporte?
+            Entre em contato conosco através do formulário abaixo
+            ou pelos nossos canais de atendimento.
+        </p>
+    </div>
+
+    <h3><i class="fas fa-comment-dots"></i> Formulário de Contato</h3>
+
+    <form method="post" class="contact-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="nome">
+                <i class="fas fa-user"></i> Seu Nome:
+            </label>
+            <input type="text" id="nome" name="nome"
+                   placeholder="Nome Completo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">
+                <i class="fas fa-at"></i> Seu E-mail:
+            </label>
+            <input type="email" id="email" name="email"
+                   placeholder="seu.email@exemplo.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="assunto">
+                <i class="fas fa-tag"></i> Assunto:
+            </label>
+            <input type="text" id="assunto" name="assunto"
+                   placeholder="Assunto da Mensagem" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mensagem">
+                <i class="fas fa-pencil-alt"></i> Mensagem:
+            </label>
+            <textarea id="mensagem" name="mensagem" rows="6"
+                      placeholder="Descreva sua dúvida ou solicitação"
+                      required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+        </button>
+    </form>
+
+    <hr>
+
+    <h3><i class="fas fa-headset"></i> Outros Canais de Atendimento</h3>
+
+    <dl class="contact-info-list">
+        <dt>
+            <i class="fas fa-envelope-open-text"></i> E-mail:
+        </dt>
+        <dd>
+            <a href="mailto:onielnovaes0@gmail.com" class="contact-link">
+                onielnovaes0@gmail.com
+            </a>
+        </dd>
+
+        <dt>
+            <i class="fas fa-phone-alt"></i> Telefone:
+        </dt>
+        <dd>
+            (87) 99961-36916 (horário comercial)
+        </dd>
+
+        <dt>
+            <i class="fas fa-clock"></i> Horário de Atendimento:
+        </dt>
+        <dd>
+            Segunda a Sexta-feira, das 9h às 18h
+        </dd>
+    </dl>
+
+</section>
+{% endblock %}
+{% include "footer.html" %}

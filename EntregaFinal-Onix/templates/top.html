@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ONYX - {{ page_title|default:"Área do Cliente" }}</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+<header class="top-menu">
+    <div class="container">
+        <div class="menu-content">
+            <a href="{% url 'home' %}" class="logo">
+                <i class="fas fa-gem"></i> ONYX
+            </a>
+
+            <nav class="main-nav">
+                <a href="{% url 'home' %}"
+                   class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                    <i class="fas fa-home"></i> Página Inicial
+                </a>
+
+                <a href="{% url 'jogos' %}"
+                   class="{% if request.resolver_match.url_name == 'jogos' %}active{% endif %}">
+                    <i class="fas fa-gamepad"></i> Códigos de Jogos
+                </a>
+
+                <a href="{% url 'giftcards' %}"
+                   class="{% if request.resolver_match.url_name == 'giftcards' %}active{% endif %}">
+                    <i class="fas fa-gift"></i> Gift Cards
+                </a>
+
+                <!-- <a href="#"
+                   class="{% if request.resolver_match.url_name == 'promocoes' %}active{% endif %}">
+                    <i class="fas fa-tags"></i> Promoções
+                </a> -->
+
+                <!-- <a href="#"
+                   class="{% if request.resolver_match.url_name == 'contato' %}active{% endif %}">
+                    <i class="fas fa-envelope"></i> Contato
+                </a> -->
+
+                <a href="{% url 'perfil' %}"
+                   class="{% if request.resolver_match.url_name == 'perfil' %}active{% endif %}">
+                    <i class="fas fa-user-circle"></i> Meu Perfil
+                </a>
+
+                <a href="{% url 'meus_pedidos' %}"
+                   class="{% if request.resolver_match.url_name == 'meus_pedidos' %}active{% endif %}">
+                    <i class="fas fa-shopping-cart"></i> Meus Pedidos
+                </a>
+
+                <!-- <a href="#"
+                   class="{% if request.resolver_match.url_name == 'configuracoes' %}active{% endif %}">
+                    <i class="fas fa-cogs"></i> Configurações
+                </a> -->
+
+                <a href="{% url 'logout' %}">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </a>
+            </nav>
+
+            <div class="user-info">
+                <span class="user-welcome">
+                    Olá, {{ user.first_name }}
+                </span>
+                <div class="user-avatar">
+                    {{ user.first_name|slice:":1"|upper }}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ page_title|default:"Área do Cliente" }}</h1>
+            <p>{{ page_description|default:"Gerencie sua conta e pedidos" }}</p>
+        </div>

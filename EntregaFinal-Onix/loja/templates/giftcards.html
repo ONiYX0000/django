@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% include "top.html" %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description }}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<main>
+<section>
+    <div class="section-header">
+        <img src="{% static 'IMAGE/gift card.png' %}"
+             alt="Banner de Gift Cards"
+             class="section-banner">
+
+        <h2>Gift Cards - Crédito Instantâneo para Suas Plataformas Favoritas!</h2>
+        <p>
+            Adicione saldo às suas contas Steam, PlayStation, Xbox, Google Play e muito mais.
+            Perfeito para presentear ou para suas próprias compras digitais.
+        </p>
+    </div>
+
+    <h3><i class="fas fa-list-alt"></i> Tipos de Gift Cards Disponíveis:</h3>
+    <ul class="styled-list">
+        <li><i class="fab fa-steam"></i> Steam Wallet</li>
+        <li><i class="fab fa-playstation"></i> PlayStation Store</li>
+        <li><i class="fab fa-xbox"></i> Xbox Live</li>
+        <li><i class="fab fa-google-play"></i> Google Play Store</li>
+        <li><i class="fab fa-apple"></i> Apple App Store</li>
+        <li><i class="fas fa-film"></i> Netflix e Spotify</li>
+    </ul>
+
+    <h3><i class="fas fa-money-bill-wave"></i> Valores Populares:</h3>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Plataforma</th>
+                <th>Valor (R$)</th>
+                <th>Status</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Steam</td>
+                <td>50,00</td>
+                <td class="status-available">Em Estoque</td>
+                <td><button class="btn-secondary">Comprar</button></td>
+            </tr>
+            <tr>
+                <td>PlayStation</td>
+                <td>100,00</td>
+                <td class="status-available">Em Estoque</td>
+                <td><button class="btn-secondary">Comprar</button></td>
+            </tr>
+            <tr>
+                <td>Google Play</td>
+                <td>30,00</td>
+                <td class="status-available">Em Estoque</td>
+                <td><button class="btn-secondary">Comprar</button></td>
+            </tr>
+            <tr>
+                <td>Xbox</td>
+                <td>75,00</td>
+                <td class="status-available">Em Estoque</td>
+                <td><button class="btn-secondary">Comprar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3><i class="fas fa-question-circle"></i> Perguntas Frequentes sobre Gift Cards:</h3>
+    <dl class="faq-list">
+        <dt>Como recebo meu Gift Card?</dt>
+        <dd>O código é enviado por e-mail imediatamente após a aprovação do pagamento.</dd>
+
+        <dt>O Gift Card tem validade?</dt>
+        <dd>A maioria dos nossos Gift Cards não tem data de expiração.</dd>
+
+        <dt>Posso usar o Gift Card em qualquer região?</dt>
+        <dd>A região de ativação pode variar conforme a plataforma.</dd>
+    </dl>
+</section>
+</main>
+{% include "footer.html" %}
+</body>
+</html>

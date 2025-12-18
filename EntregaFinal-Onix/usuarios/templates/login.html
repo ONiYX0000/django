@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ONYX - Login</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body class="auth-page">
+    <div class="container">
+        <header>
+            <h1>ONYX</h1>
+        </header>
+
+        <section>
+            <div class="login-container">
+                <h2>Acesse Sua Conta ONYX</h2>
+                <p>
+                    Entre com suas credenciais para acessar sua conta e gerenciar
+                    seus pedidos, favoritos e muito mais!
+                </p>
+
+                {% for message in messages %}
+                    <p style="color: var(--vermelho-alerta); text-align: center; margin-bottom: 15px;">
+                        {{ message }}
+                    </p>
+                {% endfor %}
+
+                <form method="post" class="login-form">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="seu.email@exemplo.com" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha"
+                               placeholder="Sua senha" required />
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="lembrar" name="lembrar" />
+                            <span class="checkmark"></span>
+                            Lembrar-me
+                        </label>
+                        <a href="#" class="forgot-password">Esqueci minha senha</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">Entrar</button>
+
+                    <div class="register-link">
+                        <p>
+                            Não tem uma conta?
+                            <a href="{% url 'cadastro' %}">Cadastre-se agora</a>
+                        </p>
+                    </div>
+                </form>
+
+                <div class="social-login">
+                    <p>Ou entre com:</p>
+                    <div class="social-buttons">
+                        <button class="social-btn google-btn">
+                            <img src="https://placehold.co/20x20/ffffff/6A0572?text=G"
+                                 alt="Ícone do Google" />
+                            Google
+                        </button>
+                        <button class="social-btn facebook-btn">
+                            <img src="https://placehold.co/20x20/ffffff/6A0572?text=F"
+                                 alt="Ícone do Facebook" />
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+{% include "footer.html" %}
+</html>
